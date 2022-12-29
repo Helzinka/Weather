@@ -1,13 +1,10 @@
-import { useState } from "react"
+import Header from "./header/header.jsx"
 import "./App.scss"
 
 function App() {
 	return (
 		<div className="App">
-			<div className="cards">
-				<p>ok</p>
-				<p>words</p>
-			</div>
+			<Header />
 		</div>
 	)
 }

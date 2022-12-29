@@ -1,0 +1,6 @@
+@use "../../style/base" as base;
+
+.Header {
+	height: 10%;
+	background-color: base.$primary-color;
+}
