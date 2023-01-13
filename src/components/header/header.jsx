@@ -1,7 +1,5 @@
 import "./header.scss"
 
-function App() {
+export default function App() {
 	return <div className="Header">header</div>
 }
-
-export default App
