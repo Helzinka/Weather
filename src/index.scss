@@ -1,5 +1,18 @@
+@font-face {
+	font-family: popins_regular;
+	src: url(./style/font/Poppins-Regular.ttf);
+}
+@font-face {
+	font-family: popins_light;
+	src: url(./style/font/Poppins-Light.ttf);
+}
+@font-face {
+	font-family: popins_medium;
+	src: url(./style/font/Poppins-Medium.ttf);
+}
+
 :root {
-	font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+	font-family: popins_regular;
 	font-size: 16px;
 	line-height: 24px;
 	font-weight: 400;
@@ -14,6 +27,4 @@ body {
 	margin: 0;
 	height: 100vh;
 	display: flex;
-	justify-content: center;
-	align-items: center;
 }
