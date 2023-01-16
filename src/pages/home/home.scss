@@ -1,33 +1,52 @@
 $bg_weather: #f3efec;
 $font_color: #1f2d61;
+$icon_meta_color: #8da5c7;
 
-.header {
+.home {
 	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
-	.details {
+	flex-direction: column;
+	gap: 1em;
+	.header {
 		display: flex;
-		flex-direction: column;
-		gap: 0.5em;
-		.cityName {
-			font-family: popins_regular;
-			color: $font_color;
-			font-size: 1.5em;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		.details {
+			display: flex;
+			flex-direction: column;
+			gap: 0.5em;
+			.cityName {
+				font-family: popins_regular;
+				color: $font_color;
+				font-size: 1.5em;
+			}
+			.temp {
+				font-family: popins_medium;
+				font-size: 4em;
+				color: $font_color;
+			}
+			.weather {
+				font-family: popins_regular;
+				align-self: center;
+				color: $font_color;
+				span {
+					padding: 0 0.5em;
+					background-color: $bg_weather;
+					border-radius: 24px;
+					font-size: 1.5em;
+				}
+			}
 		}
-		.temp {
-			font-family: popins_medium;
-			font-size: 4em;
-			color: $font_color;
-		}
-		.weather {
-			padding: 0 0.5em;
-			font-family: popins_regular;
-			color: $font_color;
-			border-radius: 24px;
-			text-align: center;
-			font-size: 1.5em;
-			background-color: $bg_weather;
+	}
+	.meta {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		div {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			gap: 1em;
 		}
 	}
 }

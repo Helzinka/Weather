@@ -1,6 +1,8 @@
 import { useSelector } from "react-redux"
 import IconWeather from "../../components/iconWeather/iconWeather"
-import temperature from "../../utils/transform.js"
+import { temperature, humidity, pressure, windSpeed } from "../../utils/transform.js"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faDroplet, faGaugeSimple, faWind } from "@fortawesome/free-solid-svg-icons"
 import "./home.scss"
 
 export default function Home() {
@@ -14,13 +16,38 @@ export default function Home() {
 						<div className="details">
 							<span className="cityName">{weather.current.name}</span>
 							<span className="temp">{temperature(weather.current.main.temp)}</span>
-							<span className="weather">{weather.current.weather[0].main}</span>
+							<div className="weather">
+								<span>{weather.current.weather[0].main}</span>
+							</div>
 						</div>
 						<div className="weather">
 							<IconWeather
 								code={weather.current.weather[0].icon}
 								size="4x"
 							/>
+						</div>
+					</div>
+					<div className="meta">
+						<div className="humidity">
+							<FontAwesomeIcon
+								icon={faDroplet}
+								color="#8da5c7"
+							/>
+							<span>{humidity(weather.current.main.humidity)}</span>
+						</div>
+						<div className="pressure">
+							<FontAwesomeIcon
+								icon={faGaugeSimple}
+								color="#8da5c7"
+							/>
+							<span>{pressure(weather.current.main.pressure)}</span>
+						</div>
+						<div className="wind">
+							<FontAwesomeIcon
+								icon={faWind}
+								color="#8da5c7"
+							/>
+							<span>{windSpeed(weather.current.wind.speed)}</span>
 						</div>
 					</div>
 				</div>
