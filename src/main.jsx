@@ -3,16 +3,18 @@ import ReactDOM from "react-dom/client"
 import { Provider } from "react-redux"
 import { configureStore } from "@reduxjs/toolkit"
 import weather from "./reducers/weater"
-import { library } from "@fortawesome/fontawesome-svg-core"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
-import Menu from "./pages/menu/Menu"
-import Home from "./pages/home/Home"
-import Search from "./pages/search/Search"
-import ErrorPage from "./pages/404/ErrorPage"
-import { faCheckSquare, faCoffee } from "@fortawesome/free-solid-svg-icons"
+import { library } from "@fortawesome/fontawesome-svg-core"
+import { faHouse, faFlag, faHeart, faBars } from "@fortawesome/free-solid-svg-icons"
+import Main from "./pages/main/main"
+import Home from "./pages/home/home"
+import Search from "./pages/search/search"
+import Liked from "./pages/liked/liked"
+import Setting from "./pages/setting/setting"
+import ErrorPage from "./pages/404/errorPage"
 import "./index.scss"
 
-library.add(faCheckSquare, faCoffee)
+library.add(faHouse, faFlag, faHeart, faBars)
 
 const store = configureStore({
 	reducer: { weather },
@@ -21,7 +23,7 @@ const store = configureStore({
 const router = createBrowserRouter([
 	{
 		path: "/",
-		element: <Menu />,
+		element: <Main />,
 		errorElement: <ErrorPage />,
 		children: [
 			{
@@ -31,6 +33,16 @@ const router = createBrowserRouter([
 			{
 				path: "search",
 				element: <Search />,
+			},
+
+			{
+				path: "liked",
+				element: <Liked />,
+			},
+
+			{
+				path: "setting",
+				element: <Setting />,
 			},
 		],
 	},
