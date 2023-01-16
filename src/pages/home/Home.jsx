@@ -3,6 +3,8 @@ import IconWeather from "../../components/iconWeather/iconWeather"
 import { temperature, humidity, pressure, windSpeed } from "../../utils/transform.js"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faDroplet, faGaugeSimple, faWind } from "@fortawesome/free-solid-svg-icons"
+import { faMoon, faSun } from "@fortawesome/free-regular-svg-icons"
+import line from "../../ressources/img/line.svg"
 import "./home.scss"
 
 export default function Home() {
@@ -49,6 +51,23 @@ export default function Home() {
 							/>
 							<span>{windSpeed(weather.current.wind.speed)}</span>
 						</div>
+					</div>
+					<div className="sunsetHour">
+						<div className="icon">
+							<FontAwesomeIcon
+								icon={faSun}
+								color="#8da5c7"
+							/>
+							<FontAwesomeIcon
+								className="test"
+								icon={faMoon}
+								color="#8da5c7"
+							/>
+						</div>
+						<img src={line} />
+					</div>
+					<div className="nextWeather">
+						<span className="date">Today</span>
 					</div>
 				</div>
 			)}

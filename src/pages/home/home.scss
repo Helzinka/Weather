@@ -5,7 +5,7 @@ $icon_meta_color: #8da5c7;
 .home {
 	display: flex;
 	flex-direction: column;
-	gap: 1em;
+	gap: 2em;
 	.header {
 		display: flex;
 		flex-direction: row;
@@ -47,6 +47,16 @@ $icon_meta_color: #8da5c7;
 			flex-direction: row;
 			align-items: center;
 			gap: 1em;
+		}
+	}
+	.sunsetHour {
+		.icon {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+		}
+		img {
+			width: 100%;
 		}
 	}
 }

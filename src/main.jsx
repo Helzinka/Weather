@@ -4,7 +4,6 @@ import { Provider } from "react-redux"
 import { configureStore } from "@reduxjs/toolkit"
 import weather from "./reducers/weater"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
-
 import Main from "./pages/main/main"
 import Home from "./pages/home/home"
 import Search from "./pages/search/search"
