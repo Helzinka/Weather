@@ -5,8 +5,7 @@ $inactive-color: #dddccd;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
-	gap: 0.25em;
-	padding: 1em 1em 2em 1em;
+
 	.active {
 		color: $active-color;
 	}

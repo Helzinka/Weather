@@ -1,6 +1,7 @@
 .main {
-	height: 100vh;
+	height: calc(100vh - 4em);
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	padding: 2em;
 }

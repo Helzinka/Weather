@@ -1,18 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
-	value: {},
+	value: { current: null, forecast: null },
 }
 
 export const weatherSlice = createSlice({
 	name: "weather",
 	initialState,
 	reducers: {
-		initWeather: (state, action) => {
-			state.value = action.payload
+		initCurrentWeather: (state, action) => {
+			state.value.current = action.payload
+		},
+		initForecastWeather: (state, action) => {
+			state.value.forecast = action.payload
 		},
 	},
 })
 
-export const { initWeather } = weatherSlice.actions
+export const { initCurrentWeather, initForecastWeather } = weatherSlice.actions
 export default weatherSlice.reducer
