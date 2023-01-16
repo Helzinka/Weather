@@ -1,14 +1,15 @@
+// Font loadding
 @font-face {
 	font-family: popins_regular;
-	src: url(./style/font/Poppins-Regular.ttf);
+	src: url(./ressources/fonts/Poppins-Regular.ttf);
 }
 @font-face {
 	font-family: popins_light;
-	src: url(./style/font/Poppins-Light.ttf);
+	src: url(./ressources/fonts/Poppins-Light.ttf);
 }
 @font-face {
 	font-family: popins_medium;
-	src: url(./style/font/Poppins-Medium.ttf);
+	src: url(./ressources/fonts/Poppins-Medium.ttf);
 }
 
 :root {
@@ -25,6 +26,10 @@
 
 body {
 	margin: 0;
-	height: 100vh;
-	display: flex;
+	padding: 0;
 }
+
+// Color setting
+
+// Test
+$bg-test: red;
