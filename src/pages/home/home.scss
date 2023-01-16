@@ -50,13 +50,33 @@ $icon_meta_color: #8da5c7;
 		}
 	}
 	.sunsetHour {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5em;
 		.icon {
 			display: flex;
 			flex-direction: row;
 			justify-content: space-between;
 		}
 		img {
-			width: 100%;
+			width: calc(100% + 4em);
+			margin-left: -2em;
+		}
+	}
+	.nextWeather {
+		display: flex;
+		flex-direction: column;
+		gap: 1em;
+		.nextHours {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			.byHours {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+			}
 		}
 	}
 }

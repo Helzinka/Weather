@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux"
 import IconWeather from "../../components/iconWeather/iconWeather"
-import { temperature, humidity, pressure, windSpeed } from "../../utils/transform.js"
+import { temperature, humidity, pressure, windSpeed, date } from "../../utils/transform.js"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faDroplet, faGaugeSimple, faWind } from "@fortawesome/free-solid-svg-icons"
 import { faMoon, faSun } from "@fortawesome/free-regular-svg-icons"
@@ -22,7 +22,7 @@ export default function Home() {
 								<span>{weather.current.weather[0].main}</span>
 							</div>
 						</div>
-						<div className="weather">
+						<div>
 							<IconWeather
 								code={weather.current.weather[0].icon}
 								size="4x"
@@ -54,21 +54,42 @@ export default function Home() {
 					</div>
 					<div className="sunsetHour">
 						<div className="icon">
-							<FontAwesomeIcon
-								icon={faSun}
-								color="#8da5c7"
-							/>
-							<FontAwesomeIcon
-								className="test"
-								icon={faMoon}
-								color="#8da5c7"
-							/>
+							<div className="sunrise">
+								<FontAwesomeIcon
+									icon={faSun}
+									color="#8da5c7"
+								/>
+								<span>{date(weather.current.sys.sunrise)}</span>
+							</div>
+							<div className="sunset">
+								<FontAwesomeIcon
+									icon={faMoon}
+									color="#8da5c7"
+								/>
+								<span>{date(weather.current.sys.sunset)}</span>
+							</div>
 						</div>
 						<img src={line} />
 					</div>
-					<div className="nextWeather">
-						<span className="date">Today</span>
-					</div>
+					{weather.forecast && (
+						<div className="nextWeather">
+							<span className="date">Today</span>
+							<div className="nextHours">
+								{weather.forecast.list.slice(0, 5).map((elem) => {
+									return (
+										<div
+											className="byHours"
+											key={elem.dt_txt}
+										>
+											<div>{date(elem.dt_txt)}</div>
+											<IconWeather code={elem.weather[0].icon} />
+											<div>{temperature(elem.main.temp)}</div>
+										</div>
+									)
+								})}
+							</div>
+						</div>
+					)}
 				</div>
 			)}
 		</>
