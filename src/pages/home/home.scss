@@ -79,4 +79,16 @@ $icon_meta_color: #8da5c7;
 			}
 		}
 	}
+	.nextWeeklyWeather {
+		display: flex;
+		flex-direction: column;
+		.byDay {
+			justify-content: space-around;
+			display: flex;
+			.minMax {
+				display: flex;
+				gap: 1em;
+			}
+		}
+	}
 }
